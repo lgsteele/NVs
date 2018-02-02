@@ -1,0 +1,140 @@
+%\documentclass[aps,twocolumn,superscriptaddress,showpacs,amssymb,apl,floatfix,longbibliography]{revtex4-1}
+\documentclass[%
+ aip,
+ sd,%
+%rsi,%
+ amsmath,amssymb,
+%preprint,%
+ reprint,%
+ longbibliography
+]{revtex4-1}
+
+\usepackage{graphicx,color}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+
+\usepackage[]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdfpagemode=UseNone}
+
+\begin{document}
+
+%\preprint{AIP/123-QED}
+
+\title{Optically detected magnetic resonance of nitrogen vacancies in a diamond anvil cell using designer diamond anvils}
+
+\author{L. Steele}
+\thanks{These authors contributed equally to this work.}
+\author{M. Lawson}
+\thanks{These authors contributed equally to this work.}
+\affiliation{Department of Physics, University of California, Davis, California 95616 USA.}
+\author{M. Onyszczak}
+\affiliation{Department of Physics and Astronomy, Iowa State University, Ames, Iowa 50011, USA}
+\author{B. T. Bush}
+\author{Z. Mei}
+\affiliation{Department of Physics, University of California, Davis, California 95616 USA.}
+\author{A. P. Dioguardi}
+\affiliation{Los Alamos National Laboratory, Los Alamos, New Mexico 87545, USA}
+\author{J. King}
+\author{A. Parker}
+\author{A. Pines}
+\affiliation{Department of Chemistry, University of California, Berkeley, California 94720, USA, and
+Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA.}
+\author{S. T. Weir}
+\author{W.  Evans}
+\author{K. Visbeck}
+\affiliation{Lawrence Livermore National Laboratory, University of California, P.O. Box 808, Livermore,
+California 94550}
+\author{Y. K. Vohra}
+\affiliation{Department of Physics, University of Alabama at Birmingham, Birmingham, Alabama 35294-1170, USA.}
+\author{N.J. Curro}
+\affiliation{Department of Physics, University of California, Davis, California 95616 USA.}
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+Optically detected magnetic resonance of nitrogen vacancy centers in diamond offers novel routes to both DC and AC magnetometry in diamond anvil cells under high pressures ($>3$ GPa).  However, a serious challenge to realizing experiments has been the insertion of microwave radiation in to the sample space without screening by the gasket material.  We utilize designer anvils with lithographically-deposited metallic microchannels on the diamond culet as a microwave antenna.  We detected the spin resonance of an ensemble of microdiamonds under pressure, and measure the pressure dependence of the zero field splitting parameters.  These experiments enable the possibility for all-optical magnetic resonance experiments on sub-$\mu$L sample volumes at high pressures.
+\end{abstract}
+
+%\pacs{76.60.-k, 76.60.Gv, 71.70.Fk, 77.80.bn }
+%\keywords{NMR, strain}
+\maketitle
+
+\section{\label{sec:level1}INTRODUCTION}
+
+A number of materials exhibit dramatic changes in electronic behavior at high pressure, and there is a great need to develop experimental tools to investigate electronic matter under extreme conditions. \cite{HeggerRh115discovery,Cambridge122pressure2009,Dias715}  Magnetic resonance is an important tool that can be realized under pressure and can provide important microscopic information about the electronic degrees of freedom.\cite{TakigawaSr122pressure,Lin2015}  Although bulk measurements have been realized at pressures up to 500 GPa,\cite{Dias715} magnetic resonance has been limited to pressures below 20 GPa.\cite{KitagawaPressureCell,HaaseJMR2015}  Pressures greater than 4 GPa can usually only be achieved by anvil cells, which present significant technical challenges because not only is the sample space limited (typically on the order of 10-100 nL), but an inductive coil must also surround the sample in order to excite and detect the resonance.  In some cases, this coil can be located outside of the gasket,\cite{SilveraNMR} but in such a case the signal to noise ratio is reduced due to poor filling fraction.  Another approach is to locate the coil inside the gasket, requiring insulated leads to pass between the diamond culet and gasket material without severing under high pressure.\cite{HaaseJMR2015}  In this case the leads frequently break, and even when successful the signal to noise is limited due to the small sample volume available.
+
+An alternative approach is to perform optical detection through transparent diamond anvils. Optically detected magnetic resonance (ODMR) can be realized via negatively-charged nitrogen-vacancy (NV$^-$) centers in the diamond lattice.  NV$^-$ defects contain localized electronic states with a spin $S=1$ that can be probed via fluorescence spectroscopy. The spin-spin interactions lead to fine structure splitting in zero magnetic field, with a spin Hamiltonian:
+\begin{equation}
+\mathcal{H} = D\left(\hat{S}_z^2 - S(S+1)/3\right) + {E} \left(\hat{S}_x^2 - \hat{S}_{y}^2\right),
+\end{equation}
+where $D$ are $E$ are the zero-field splitting parameters.\cite{NVpressurePRL} $D$ and $E$ are determined by the unpaired electron spin density surrounding the defect, and depend on the details of the electronic wavefunction. For an isolated NV$^-$ center with $C_{3v}$ symmetry, $E$ vanishes, but in real systems strain transverse to the NV axis leads to a small splitting between the $S=\pm 1$ states in zero magnetic field.\cite{NVcenterGroupTheoryAnalysis} Single diamond crystals grown by chemical vapor deposition (CVD) with NV$^-$ centers are particularly important as magnetic field sensors, due to both the large gyromagnetic ratio of the electron spins  and the long spin coherence time $T_2 \sim 2 $ms  \cite{Balasubramanian2009} (up to 1s in specially-prepared crystals).\cite{BarGill2013}  NV centers have sensitivities on the order of nT/$\sqrt{\textrm{Hz}}$,\cite{Schoenfeld2011,Shin2012,NVcenterImaging2015} and have been used to detect nuclear spins outside of the diamond matrix.\cite{WratchrupScience2013,RugarNVScience2013}  As a result, NV$^-$ center magnetometry can offer an attractive alternative to conventional Faraday-induction-based magnetic resonance at high pressures in a DAC without the limited sensitivity and the technical difficulties of locating a detection coil within the sample space.
+
+\begin{figure}[!tb]
+\includegraphics[width=0.45\linewidth]{DAC_sideview}
+\includegraphics[width=0.45\linewidth]{DAC_topview}
+\includegraphics[width=0.55\linewidth]{DesignerAnvil}
+\includegraphics[width=0.32\linewidth]{NMR_DACv2}% Here is how to import EPS art
+\caption{\label{fig:DAC} Assembled DAC and designer anvil. The diameter of the culet is 1 mm. The tungsten microchannel consists of a series of eight concentric rings, each of width 5 $\mu$m. }
+\end{figure}
+
+
+ODMR has recently been performed on NV$^-$ centers up to 60 GPa in a diamond anvil cell.\cite{NVpressurePRL}   However, this required the use of a specialized non-conducting gasket in order to introduce the microwave radiation to the sample space between the anvils. The gasket consisted of an insulating matrix of boronitride powder mixed with epoxy, with an embedded Pt wire as a microwave antenna.  Here, we utilize a `designer' anvil with a metallic microchannel located within the culet of the anvil. This approach is superior because it enables us to lower the microwave power, reducing spurious heating effects, and does not require the use of non-conducting gasket materials.
+
+
+\section{Pressure cell and Designer anvils}
+
+We have developed a diamond anvil cell (DAC) for use in a small bore cryostat of inner diameter 25 mm, as shown in Fig. \ref{fig:DAC}. The cell is constructed from MP35N steel and is designed so that the pressure axis can be oriented perpendicular to the cryostat axis. Optical access to the sample is via a channel of length 7.3 mm to the anvil table, and opening angle of 20$^{\circ}$. The diamond anvils are type Ia gem-quality diamonds with 1mm diameter culets, and the anvils are secured by Stycast 1266 epoxy and aligned by eye under a microscope with the help of small set screws.  Pressure is applied by a set of four 4-40 steel bolts.
+
+The gasket is manufactured by drilling a 300 $\mu$m diameter hole in MP35N steel  with a micro-EDM, followed by pre-indenting to a thickness of 100 $\mu$m.  The designer anvil was constructed by lithographically depositing tungsten metal with a pattern consisting of several concentric rings on the culet, with electrical contact pads located on the pavilion face.\cite{WierDACmicroheater,WeirSusceptibilityDACreview,WeirPRL}   After deposition, the a synthetic diamond layer grown by CVD was grown on the culet of thickness approximately 50$\mu$m.\cite{WeirDesignerDiamondLetter}  Electrical connections to the surface antenna were made with thin platinum wire and silver paint.  The antenna was then connected to an HP 8665A frequency source, which was itself controlled by a computer.
+
+
+
+\section{Microdiamonds and Optical Design}
+
+An ensemble of fluorescent microdiamonds  (Adamas nano) of average diameter $15\mu$m in powder form secured to the surface of the designer anvil within the sample space. In addition a small ruby chip of diameter 40 $\mu$m was located within the sample space in order to calibrate the pressure, \cite{RubyCalibration} and Daphne oil 7373 was used as a pressure medium.\cite{DaphneOilHighPressure}
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{set-upV3}% Here is how to import EPS art
+\caption{\label{fig:setup} Optical layout for detecting the ODMR signal from the NV$^-$ centers. }
+\end{figure}
+
+
+The optical setup system consists of a 4.5 mW, 532 nm colimated laser diode source (Thorlabs CPS532) mounted on an optical kinematic mount (Thorlabs KM100) which is aligned into an optical cage cube system using a second kinematic mount with a 1" mirror (Thorlabs KM100-E02), as shown in Fig. \ref{fig:setup}.  The collimated beam passes through an optical shortpass filter (Edmund Optics 69-216) and is focused onto the NV$^-$ centers inside the sample space by using an achromatic doublet (Thorlabs AC254-030-A-ML) that focuses the beam through an optical access port in the DAC to a spot size of $\sim 10\mu$m.  The fluorescence is collected using the achromatic doublet, after which it reflects off the optical shortpass filter and is focused onto an avalanche photodiode (Thorlabs APD120A2/M) using a plano-convex lens (Thorlabs LA1131-A-ML).   ODMR spectra are collected by amplitude-modulating a continuous-wave microwave signal from the HP8665A with the reference of a SR510 lock-in amplifier, and measuring the output of the avalanche photodiode detector with the lock-in and a Keithley 192 Digital Voltmeter.\cite{ODMRnanodiamonds}
+Control of the microwave source, lock-in and digital voltmeter for the experiments was achieved using Python PyVisa GPIB interfacing. The ruby fluorescence was measured and analyzed using an Ocean Optics HR4000 spectrometer.
+
+
+\section{Results}
+
+Figure \ref{fig:waterfall} shows the spectra of the NV$^-$ centers as a function of the microwave frequency at several different pressures.   We fit the spectra to the sum of two lorentzians, and Fig. \ref{fig:parsVSpressure} shows  the ZFS parameters $D$ and $E$.  The doublet feature arises due to the $E$ parameter.  $D$ varies linearly with pressure, with slope $dD/dP = 11.72 \pm 0.68$ MH/GPa. $D$ increases under pressure because the distance between the spins decreases  due to both the macroscopic compression of the diamond lattice, as well as local structural distortions at the NV defect site.\cite{NVpressureTheory}  The value we observe is slightly lower than reported previously, \cite{NVpressurePRL} but is close to the \textit{ab initio} calculation of 10.30 MHz/GPa.\cite{NVpressureTheory}  In the Doherty work, small chips taken from a type IIa CVD grown single crystal, whereas in this work commercial microdiamonds were measured . It is possible, therefore, that the difference in the pressure response could reflect differences in the sample preparation.  It is noteworthy that the anvils we used are type Ia, which nominally have a larger concentration of nitrogen impurities and hence a larger background fluorescence than type IIa anvils.  However, the contribution from any NV centers in the anvil is suppressed, since these are not located within the focal plan of the beam. As a result, the absorbtion and the fluorescence are both suppressed for NV centers outside of the microdiamonds.
+
+
+\begin{figure}[!tb]
+\includegraphics[width=\linewidth]{Waterfall3}% Here is how to import EPS art
+\caption{\label{fig:waterfall} Zero-field ODMR spectra  of an ensemble of microcrystals at several pressures.}
+\end{figure}
+
+Figure \ref{fig:parsVSpressure}(b) shows the linewidth and strain parameter $E$ as a function of pressure.  There is a slight increase in linewidth suggesting non-hydrostatic conditions within the cell.  A linear fit  yields a slope of 0.8 MHz/GPa, or a pressure variation $\delta P/P = 6\%$.     Daphne 7373 is expected to solidify at 2.2 GPa at room temperature, which roughly coincides with the increase observed in Fig. \ref{fig:parsVSpressure}.\cite{DaphneOilHighPressure}  $E$ does not show any significant variation with pressure, which likely reflects the fact that the local symmetry around the defect sites is not changing under pressure.\cite{NVcenterGroupTheoryAnalysis} Nevertheless, anisotropic strain  can contribute to linewidth broadening  because the shift will depend on the relative alignment of the strain tensor with any given NV$^-$ axis.  It is noteworthy that the relative intensities of the main doublet change with pressure, which suggests that inhomogeneous strain fields may be developing as the pressure medium solidifies.
+
+\begin{figure}[!tb]
+\includegraphics[width=\linewidth]{pars_VS_pressure}% Here is how to import EPS art
+\caption{\label{fig:parsVSpressure} Pressure dependence of  the zero-field splitting parameters, (a) $D$, and (b) $E_0$, as well as the linewidth. Error bars for (a) are the size of the points.}
+\end{figure}
+
+\section{Conclusions}
+
+Designer anvils offer a superior performance for ODMR of NV$^-$ centers in diamond anvil cells.  We have found that the the ZFS parameters for the NV$^-$ centers in microdiamonds exhibit a pressure dependence that agrees with \textit{ab initio} calculations. The linear response in the range of 0-8 GPa would enable the ODMR resonance to function as an effective manometer, eliminating the need to use a ruby chip and thus providing more space for the sample.  Furthermore, it may be possible to implant NV$^-$ centers directly on the culet through the CVD process for the designer anvil fabrication.  Although in this work an ensemble of microdiamonds was utilized, we have also observed ODMR from a single microdiamond crystal.  Single crystal ODMR would enable the application of magnetic fields to split the NV$^-$ resonance, which would enable vector magnetization measurements at high pressure.\cite{SteinartNVimaging} It would also enable the detection of nuclear spins on the microdiamond surface,\cite{WratchrupScience2013} opening a possible route to microscopic NMR measurements of superconducting sulfur hydride and metallic hydrogen.\cite{Drozdov2015,Dias715}
+
+
+\begin{acknowledgments}
+We thank  P. Klavins for assistance in the laboratory, and acknowledge discussions with X. Zhu. Work at UC Davis was supported by the NSF under Grant No.\ DMR-1506961, NSF grant PHY-1560482, and the NNSA under Grant No. DE-NA0002908. Work at LLNL was supported by UC Lab Fees Award \#12-LR-238151. Work at UC Berkeley was supported by the Director, Office of Science, Office of Basic Energy Sciences, Materials Sciences and Engineering Division, of the US Department of Energy under Contract No. DE-AC02-05CH11231. Lawrence Livermore National Laboratory is operated by Lawrence Livermore National Security, LLC, for the U.S. Department of Energy, National Nuclear Security Administration under Contract DE-AC52-07NA27344.  Work at the Univ. Alabama was supported by DOE-NNSA under Grant No. DE-NA0002928.
+
+\end{acknowledgments}
+
+\bibliography{CurroBibliography}
+
+\end{document}
+%
+% ****** End of file aipsamp.tex ******
